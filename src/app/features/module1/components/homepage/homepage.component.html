@@ -1,5 +1,5 @@
-<div *ngIf="homepageData" class="ecl-container">
-  <div *ngFor="let paragraph of homepageData.data.content.paragraphs" class="ecl-container">
+<div *ngIf="homepageData">
+  <div *ngFor="let paragraph of homepageData.data.content.paragraphs" class="ecl-container ecl-u-mb-2xl">
     <ng-container *ngIf="paragraph.__typename === 'ParagraphOeRichText'">
       <paragraph-oe-rich-text [fieldOeTextLong]="paragraph.fieldOeTextLong"></paragraph-oe-rich-text>
     </ng-container>
@@ -9,6 +9,19 @@
         [fieldOeText]="paragraph.fieldOeText"
         [imageUrl]="paragraph.imageUrl">
       </paragraph-oe-quote>
+    </ng-container>
+    <ng-container *ngIf="paragraph.__typename === 'accordion'">
+      <accordion
+        [accordionItems]="paragraph.accordionItems">
+      </accordion>
+    </ng-container>
+    <ng-container *ngIf="paragraph.__typename === 'banner'">
+      <banner
+        [description]="paragraph.description"
+        [title]="paragraph.title"
+        [credit]="paragraph.credit"
+        [imageUrl]="paragraph.imageUrl">
+      </banner>
     </ng-container>
   </div>
 </div>

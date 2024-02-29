@@ -1,26 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { MockService } from '@shared/services/mock.services';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'banner',
   templateUrl: './banner.component.html'
 })
-export class BannerComponent implements OnInit {
-  image: string;
-  title: string;
-  description: string;
-
-  constructor(private mockService: MockService) {}
-
-  ngOnInit(): void {
-    this.getData();
-  }
-
-  getData(): void {
-    this.mockService.getBannerData().subscribe(data => {
-      this.image = data.image;
-      this.title = data.title;
-      this.description = data.description;
-    });
-  }
+export class BannerComponent {
+  @Input() imageUrl: string;
+  @Input() title: string;
+  @Input() description: string;
+  @Input() credit: string;
 }

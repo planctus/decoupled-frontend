@@ -1,29 +1,17 @@
-<section
-  class="ecl-banner ecl-banner--m ecl-banner--centered"
-  [ngClass]="{ 
-    'ecl-banner--plain-background': !image,
-    'ecl-banner--image-overlay': image 
-  }"
->
-  <ng-container *ngIf="image">
-    <picture class="ecl-picture ecl-banner__picture" [innerHTML]="image"></picture>
-  </ng-container>
-  <div class="ecl-container">
-    <div class="ecl-banner__container">
-      <div class="ecl-banner__content">
-        <ng-container *ngIf="title">
-          <div class="ecl-banner__title">
-            <span class="ecl-banner__title-text">
-              {{ title }}
-            </span>
-          </div>
-        </ng-container>
-        <p class="ecl-banner__description">
-          <span class="ecl-banner__description-text">
-            {{ description }}
-          </span>
-        </p>
-      </div>
-    </div>
+<ecl-banner
+    variant="image-overlay">
+    <picture eclBannerPicture *ngIf="imageUrl">
+      <img eclBannerImage src="{{ imageUrl }}" alt="alternative text" />
+    </picture>
+  <div eclBannerTitle *ngIf="title">
+    <span eclBannerTitleText>{{ title }}</span>
   </div>
-</section>
+  <div eclBannerCredit *ngIf="credit">{{ credit }}</div>
+  <p eclBannerDescription>
+    <span eclBannerDescriptionText>{{ description }}</span>
+  </p>
+  <a eclLink routerLink="/" variant="cta">
+      <span eclLinkLabel>Subscribe</span>
+      <ecl-icon icon="corner-arrow" transform="rotate-90"></ecl-icon>
+  </a>
+</ecl-banner>
