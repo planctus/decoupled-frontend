@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { EclAllModule } from '@eui/ecl';
+import { BannerComponent } from './components/banner/banner.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { ParagraphOeRichTextComponent } from './components/paragraph-oe-rich-text/paragraph-oe-rich-text.component';
+import { ParagraphOeQuoteComponent } from './components/paragraph-oe-quote/paragraph-oe-quote.component';
 
 const MODULES = [
     RouterModule,
@@ -13,7 +17,18 @@ const MODULES = [
 ];
 @NgModule({
     imports: [...MODULES],
-    declarations: [],
-    exports: [...MODULES],
+    declarations: [
+        AccordionComponent,
+        BannerComponent,
+        ParagraphOeRichTextComponent,
+        ParagraphOeQuoteComponent
+    ],
+    exports: [
+        ...MODULES,
+        AccordionComponent,
+        BannerComponent,
+        ParagraphOeRichTextComponent,
+        ParagraphOeQuoteComponent
+    ],
 })
 export class SharedModule {}

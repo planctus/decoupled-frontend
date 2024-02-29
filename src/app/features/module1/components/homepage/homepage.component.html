@@ -1,0 +1,14 @@
+<div *ngIf="homepageData" class="ecl-container">
+  <div *ngFor="let paragraph of homepageData.data.content.paragraphs" class="ecl-container">
+    <ng-container *ngIf="paragraph.__typename === 'ParagraphOeRichText'">
+      <paragraph-oe-rich-text [fieldOeTextLong]="paragraph.fieldOeTextLong"></paragraph-oe-rich-text>
+    </ng-container>
+    <ng-container *ngIf="paragraph.__typename === 'ParagraphOeQuote'">
+      <paragraph-oe-quote
+        [fieldOePlainTextLong]="paragraph.fieldOePlainTextLong"
+        [fieldOeText]="paragraph.fieldOeText"
+        [imageUrl]="paragraph.imageUrl">
+      </paragraph-oe-quote>
+    </ng-container>
+  </div>
+</div>
