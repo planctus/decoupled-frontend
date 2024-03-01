@@ -24,7 +24,41 @@ export class MockService {
               imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
               title: 'Headline sed elit lorem. Donec dictum.',
               description: 'Pellentesque tempor tincidunt quam, finibus vulputate eros iaculis pharetra orci arcu, dictum maximus arcu pellentesque eget. Cras massa nunc.',
-              credit: '© Copyright or credit'
+              credit: '© Copyright or credit',
+              variant: 'text-box',
+            },
+            {
+              "__typename": "banner",
+              imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
+              title: 'Headline sed elit lorem. Donec dictum.',
+              description: 'Pellentesque tempor tincidunt quam, finibus vulputate eros iaculis pharetra orci arcu, dictum maximus arcu pellentesque eget. Cras massa nunc.',
+              credit: '© Copyright or credit',
+              variant: 'image-overlay',
+            },
+            {
+              "__typename": "banner",
+              imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
+              title: 'Headline sed elit lorem. Donec dictum.',
+              description: 'Pellentesque tempor tincidunt quam, finibus vulputate eros iaculis pharetra orci arcu, dictum maximus arcu pellentesque eget. Cras massa nunc.',
+              credit: '© Copyright or credit',
+              variant: 'text-highlight',
+            },
+            {
+              "__typename": "banner",
+              imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
+              title: 'Headline sed elit lorem. Donec dictum.',
+              description: 'Pellentesque tempor tincidunt quam, finibus vulputate eros iaculis pharetra orci arcu, dictum maximus arcu pellentesque eget. Cras massa nunc.',
+              credit: '© Copyright or credit',
+              variant: 'plain-background',
+            },
+            {
+              "__typename": "banner",
+              imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
+              title: 'Headline sed elit lorem. Donec dictum.',
+              description: 'Pellentesque tempor tincidunt quam, finibus vulputate eros iaculis pharetra orci arcu, dictum maximus arcu pellentesque eget. Cras massa nunc.',
+              credit: '© Copyright or credit',
+              variant: 'plain-background',
+              isCentered: false,
             },
             {
               "__typename": "ParagraphOeRichText",
@@ -36,6 +70,12 @@ export class MockService {
               "__typename": "ParagraphOeQuote",
               fieldOePlainTextLong: "Fusce convallis metus id felis luctus adipiscing. Vivamus consectetuer hendrerit lacus. Phasellus blandit leo ut odio. Aenean commodo ligula eget dolor. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus.",
               fieldOeText: "John Smith"
+            },
+            {
+              "__typename": "ParagraphOeQuote",
+              fieldOePlainTextLong: "Fusce convallis metus id felis luctus adipiscing. Vivamus consectetuer hendrerit lacus. Phasellus blandit leo ut odio. Aenean commodo ligula eget dolor. Nam ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus.",
+              fieldOeText: "John Smith",
+              imageUrl: 'https://inno-ecl.s3.amazonaws.com/media/examples/example-image.jpg',
             },
             {
               "__typename": "accordion",

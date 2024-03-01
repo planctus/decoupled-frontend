@@ -1,6 +1,8 @@
 <ecl-banner
-    variant="image-overlay">
-    <picture eclBannerPicture *ngIf="imageUrl">
+    [variant]="variant"
+    isCentered="{{isCentered }}"
+    >
+    <picture eclBannerPicture *ngIf="imageUrl && variant != 'plain-background'">
       <img eclBannerImage src="{{ imageUrl }}" alt="alternative text" />
     </picture>
   <div eclBannerTitle *ngIf="title">
