@@ -8,6 +8,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { ParagraphOeRichTextComponent } from './components/paragraph-oe-rich-text/paragraph-oe-rich-text.component';
 import { ParagraphOeQuoteComponent } from './components/paragraph-oe-quote/paragraph-oe-quote.component';
+import { FeaturedComponent } from './components/featured/featured.component';
 
 const MODULES = [
     RouterModule,
@@ -21,14 +22,16 @@ const MODULES = [
         AccordionComponent,
         BannerComponent,
         ParagraphOeRichTextComponent,
-        ParagraphOeQuoteComponent
+        ParagraphOeQuoteComponent,
+        FeaturedComponent
     ],
     exports: [
         ...MODULES,
         AccordionComponent,
         BannerComponent,
         ParagraphOeRichTextComponent,
-        ParagraphOeQuoteComponent
+        ParagraphOeQuoteComponent,
+        FeaturedComponent
     ],
 })
 export class SharedModule {}

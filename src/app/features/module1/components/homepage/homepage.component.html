@@ -25,5 +25,15 @@
         [imageUrl]="paragraph.imageUrl">
       </app-ecl-banner>
     </ng-container>
+    <ng-container *ngIf="paragraph.__typename === 'featured'">
+      <app-ecl-featured
+        [description]="paragraph.description"
+        [isExtended]="paragraph.isExtended"
+        [title]="paragraph.title"
+        [alignment]="paragraph.alignment"
+        [imageCaption]="paragraph.imageCaption"
+        [imageUrl]="paragraph.imageUrl">
+      </app-ecl-featured>
+    </ng-container>
   </div>
 </div>

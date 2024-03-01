@@ -1,0 +1,16 @@
+<ecl-featured
+  [isExtended]="isExtended"
+  [position]="alignment"
+>
+  <ecl-featured-item>
+    <ecl-media-container>
+      <img eclMediaContainerItem
+        src="{{ imageUrl }}"
+        alt="Lorem ipsum dolor sit amet">
+        {{ imageCaption }}
+      </ecl-media-container>
+  </ecl-featured-item>
+  <ecl-featured-item eclTitle="{{ title }}">
+    <ecl-featured-item-description>{{ description }}</ecl-featured-item-description>
+  </ecl-featured-item>
+</ecl-featured>
