@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 type BannerVariant = "text-box" | "image-overlay" | "text-highlight" | "plain-background";
 
 @Component({
-  selector: 'banner',
+  selector: 'app-ecl-banner',
   templateUrl: './banner.component.html'
 })
 export class BannerComponent {

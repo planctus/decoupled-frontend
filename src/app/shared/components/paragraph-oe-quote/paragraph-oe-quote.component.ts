@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'paragraph-oe-quote',
+  selector: 'app-ecl-paragraph-oe-quote',
   templateUrl: './paragraph-oe-quote.component.html'
 })
 export class ParagraphOeQuoteComponent {
