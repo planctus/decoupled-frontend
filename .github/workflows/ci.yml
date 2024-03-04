@@ -32,10 +32,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: angular/dev-infra/actions/setup-node
+      - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
-      - run: npm install -g @angular/cli
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test
@@ -46,10 +45,9 @@ jobs:
     if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
-      - uses: angular/dev-infra/actions/setup-node
+      - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
-      - run: npm install -g @angular/cli
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build app
@@ -70,10 +68,9 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v4
-      - uses: angular/dev-infra/actions/setup-node
+      - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
-      - run: npm install -g @angular/cli
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Package application
