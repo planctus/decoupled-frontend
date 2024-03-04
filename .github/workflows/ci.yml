@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'chore-c*'
 
 jobs:
   semantic:
@@ -59,7 +58,6 @@ jobs:
           publish-dir: 'dist/browser'
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
-          NETLIFY: true
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
   deploy-branch-preview:
@@ -78,10 +76,9 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
-          alias: ${{ github.ref_name }}
           publish-dir: 'dist/browser'
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: true
         env:
-          NETLIFY: true
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
