@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - 'main'
-      - 'chore-ci'
+      - 'chore-c*'
 
 jobs:
   semantic:
@@ -55,7 +55,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
-          alias: ${{ github.event.number }}
+          alias: preview-${{ github.event.number }}
           publish-dir: 'dist/browser'
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
