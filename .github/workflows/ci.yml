@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test
-        run: ng lint app
+        run: yarn lint
   deploy-pr-preview:
     name: deploy preview
     runs-on: ubuntu-latest

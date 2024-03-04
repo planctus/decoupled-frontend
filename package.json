@@ -3,6 +3,7 @@
     "version": "17.2.0",
     "license": "EUPL-1.1",
     "scripts": {
+        "lint": "eslint --ext .ts,.tsx src/",
         "ng": "ng",
         "start-mock-server": "nodemon --watch ./mock ./mock/server.js",
         "start-serve": "eui-scripts serve-app --configuration=proxy-mock",
