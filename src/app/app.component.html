@@ -4,21 +4,7 @@
         <div eclSiteHeaderEnvironment>Environment</div>
 
         <ecl-site-header-action>
-            <ecl-site-header-login 
-                [isLoggedIn]="isLoggedIn" 
-                (login)="onLogin($event)">
-                <p eclSiteHeaderLoginDescription>
-                    {{ 'ecl.site-header.LOGGED-IN-AS' | translate }} {{ userInfos?.fullName }}
-                </p>
-                <hr eclSiteHeaderLoginSeparator />
-                <a eclLink variant="standalone" href="#" (click)="onLogout($event)">
-                    {{ 'ecl.site-header.LOGOUT' | translate }}
-                </a>
-            </ecl-site-header-login>
-
             <ecl-site-header-language></ecl-site-header-language>
-
-            <ecl-site-header-search (search)="onSearch($event)"></ecl-site-header-search>
         </ecl-site-header-action>
 
         <ecl-menu (menuItemSelect)="onMenuItemSelected($event)">
