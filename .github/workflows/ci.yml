@@ -55,8 +55,8 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
         with:
-          alias: ec-decoupled-frontend${{ github.event.number }}
-          publish-dir: 'dist'
+          alias: ${{ github.event.number }}
+          publish-dir: 'dist/browser'
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NETLIFY: true
@@ -79,7 +79,7 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0
         with:
           alias: ${{ github.ref_name }}
-          publish-dir: 'dist'
+          publish-dir: 'dist/browser'
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           NETLIFY: true
