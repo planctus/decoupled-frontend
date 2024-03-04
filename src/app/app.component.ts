@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import {
     EclMenuItemSelectEvent,
@@ -11,16 +11,13 @@ import {
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnDestroy {
-    // an array to keep all subscriptions and easily unsubscribe
-    subs: Subscription[] = [];
 
-    constructor(
-        private store: Store<any>,
-    ) {
+    // @ts-ignore
+    constructor(private store: Store<any>) {
     }
 
     ngOnDestroy() {
-        this.subs.forEach((s: Subscription) => s.unsubscribe());
+        console.log('destroying');
     }
 
     onMenuItemSelected(evt: EclMenuItemSelectEvent) {

@@ -1,10 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import {
     CONFIG_TOKEN,
-    UserService,
     EuiAppConfig,
-    UserDetails,
-    UserPreferences,
     I18nService,
 } from '@eui/core';
 import { HttpClient } from '@angular/common/http';
@@ -15,7 +12,6 @@ import { switchMap } from 'rxjs/operators';
     providedIn: 'root',
 })
 export class AppStarterService {
-    defaultUserPreferences: UserPreferences;
 
     constructor(
         protected i18nService: I18nService,
@@ -23,4 +19,10 @@ export class AppStarterService {
         protected http: HttpClient,
     ) {
     }
+
+    // eslint-disable-next-line
+    start(): Observable<any> {
+        return this.i18nService.init();
+    }
+
 }
