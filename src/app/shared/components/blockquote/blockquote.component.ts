@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-ecl-paragraph-oe-quote',
-  templateUrl: './paragraph-oe-quote.component.html'
+  selector: 'app-ecl-blockquote',
+  templateUrl: './blockquote.component.html'
 })
-export class ParagraphOeQuoteComponent {
+export class BlockquoteComponent {
   @Input() fieldOePlainTextLong: string;
   @Input() fieldOeText: string;
   @Input() imageUrl: string;
+  @Input() imageAlt: string;
 }

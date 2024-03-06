@@ -7,8 +7,8 @@ import { EclAllModule } from '@eui/ecl';
 import { ParagraphOeBannerComponent } from './components/paragraph-oe-banner/paragraph-oe-banner.component';
 import { ParagraphOeAccordionComponent } from './components/paragraph-oe-accordion/paragraph-oe-accordion.component';
 import { ParagraphOeRichTextComponent } from './components/paragraph-oe-rich-text/paragraph-oe-rich-text.component';
-import { ParagraphOeQuoteComponent } from './components/paragraph-oe-quote/paragraph-oe-quote.component';
-import { FeaturedComponent } from './components/featured/featured.component';
+import { BlockquoteComponent } from './components/blockquote/blockquote.component';
+import { FeaturedItemComponent } from './components/featured-item/featured-item.component';
 
 const MODULES = [
     RouterModule,
@@ -22,16 +22,16 @@ const MODULES = [
         ParagraphOeAccordionComponent,
         ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
-        ParagraphOeQuoteComponent,
-        FeaturedComponent
+        BlockquoteComponent,
+        FeaturedItemComponent
     ],
     exports: [
         ...MODULES,
         ParagraphOeAccordionComponent,
         ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
-        ParagraphOeQuoteComponent,
-        FeaturedComponent
+        BlockquoteComponent,
+        FeaturedItemComponent
     ],
 })
 export class SharedModule {}
