@@ -10,20 +10,21 @@
         [imageUrl]="paragraph.imageUrl">
       </app-ecl-paragraph-oe-quote>
     </ng-container>
-    <ng-container *ngIf="paragraph.__typename === 'accordion'">
-      <app-ecl-accordion
-        [accordionItems]="paragraph.accordionItems">
-      </app-ecl-accordion>
+    <ng-container *ngIf="paragraph.__typename === 'ParagraphOeAccordion'">
+      <app-ecl-paragraph-oe-accordion
+        [fieldOeParagraphs]="paragraph.fieldOeParagraphs">
+      </app-ecl-paragraph-oe-accordion>
     </ng-container>
-    <ng-container *ngIf="paragraph.__typename === 'banner'">
-      <app-ecl-banner
-        [description]="paragraph.description"
-        [title]="paragraph.title"
+    <ng-container *ngIf="paragraph.__typename === 'ParagraphOeBanner'">
+      <app-ecl-paragraph-oe-banner
+        [fieldOeText]="paragraph.fieldOeText"
+        [fieldOeTitle]="paragraph.fieldOeTitle"
         [credit]="paragraph.credit"
-        [variant]="paragraph.variant"
-        [isCentered]="paragraph.isCentered"
-        [imageUrl]="paragraph.imageUrl">
-      </app-ecl-banner>
+        [oeParagraphsVariant]="paragraph.oeParagraphsVariant"
+        [fieldOeBannerAlignment]="paragraph.fieldOeBannerAlignment"
+        [fieldOeLink]="paragraph.fieldOeLink"
+        [fieldOeMedia]="paragraph.fieldOeMedia">
+      </app-ecl-paragraph-oe-banner>
     </ng-container>
     <ng-container *ngIf="paragraph.__typename === 'featured'">
       <app-ecl-featured

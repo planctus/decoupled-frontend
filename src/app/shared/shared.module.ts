@@ -4,8 +4,8 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { EclAllModule } from '@eui/ecl';
-import { BannerComponent } from './components/banner/banner.component';
-import { AccordionComponent } from './components/accordion/accordion.component';
+import { ParagraphOeBannerComponent } from './components/paragraph-oe-banner/paragraph-oe-banner.component';
+import { ParagraphOeAccordionComponent } from './components/paragraph-oe-accordion/paragraph-oe-accordion.component';
 import { ParagraphOeRichTextComponent } from './components/paragraph-oe-rich-text/paragraph-oe-rich-text.component';
 import { ParagraphOeQuoteComponent } from './components/paragraph-oe-quote/paragraph-oe-quote.component';
 import { FeaturedComponent } from './components/featured/featured.component';
@@ -19,16 +19,16 @@ const MODULES = [
 @NgModule({
     imports: [...MODULES],
     declarations: [
-        AccordionComponent,
-        BannerComponent,
+        ParagraphOeAccordionComponent,
+        ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
         ParagraphOeQuoteComponent,
         FeaturedComponent
     ],
     exports: [
         ...MODULES,
-        AccordionComponent,
-        BannerComponent,
+        ParagraphOeAccordionComponent,
+        ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
         ParagraphOeQuoteComponent,
         FeaturedComponent
