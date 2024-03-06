@@ -4,7 +4,7 @@ import { MockService } from '@shared/services/mock.services';
 @Component({
   templateUrl: './homepage.component.html'
 })
-export class Homepage implements OnInit {
+export class HomepageComponent implements OnInit {
   homepageData: any; // Adjust type based on the response structure
 
   constructor(private mockService: MockService) {}
