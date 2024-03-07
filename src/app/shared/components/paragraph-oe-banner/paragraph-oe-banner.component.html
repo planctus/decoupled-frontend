@@ -1,9 +1,9 @@
 <ecl-banner
     [variant]="oeParagraphsVariant"
     [class.full-width]="fieldOeBannerFullWidth"
-    isCentered="{{ fieldOeBannerAlignment == 'center' }}"
+    isCentered="{{ fieldOeBannerAlignment === 'center' }}"
     >
-    <picture eclBannerPicture *ngIf="fieldOeMedia && oeParagraphsVariant != 'plain-background'">
+    <picture eclBannerPicture *ngIf="fieldOeMedia && oeParagraphsVariant !== 'plain-background'">
       <img eclBannerImage src="{{ fieldOeMedia.mediaFileUrl }}" alt="{{ fieldOeMedia.mediaFileAlt }}" />
     </picture>
   <div eclBannerTitle *ngIf="fieldOeTitle">
