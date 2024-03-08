@@ -1,0 +1,20 @@
+<ecl-banner
+    [variant]="oeParagraphsVariant"
+    [class.full-width]="fieldOeBannerFullWidth"
+    isCentered="{{ fieldOeBannerAlignment === 'center' }}"
+    >
+    <picture eclBannerPicture *ngIf="fieldOeMedia && oeParagraphsVariant !== 'plain-background'">
+      <img eclBannerImage src="{{ fieldOeMedia.mediaFileUrl }}" alt="{{ fieldOeMedia.mediaFileAlt }}" />
+    </picture>
+  <div eclBannerTitle *ngIf="fieldOeTitle">
+    <span eclBannerTitleText>{{ fieldOeTitle }}</span>
+  </div>
+  <div eclBannerCredit *ngIf="credit">{{ credit }}</div>
+  <p eclBannerDescription>
+    <span eclBannerDescriptionText>{{ fieldOeText }}</span>
+  </p>
+  <a eclLink routerLink="{{ fieldOeLink.uri }}" variant="cta">
+      <span eclLinkLabel>{{ fieldOeLink.title }}</span>
+      <ecl-icon icon="corner-arrow" transform="rotate-90"></ecl-icon>
+  </a>
+</ecl-banner>

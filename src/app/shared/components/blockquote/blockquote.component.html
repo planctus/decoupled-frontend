@@ -1,0 +1,10 @@
+<figure eclBlockquote
+  author="{{ fieldOeText }}"
+>
+  {{ fieldOePlainTextLong }}
+  <picture eclBlockquotePicture
+  *ngIf="imageUrl">
+    <img eclBlockquoteImage
+      [src]="imageUrl" [alt]="imageAlt" />
+  </picture>
+</figure>

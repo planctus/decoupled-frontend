@@ -1,0 +1,7 @@
+<ecl-accordion>
+  <ecl-accordion-item
+      *ngFor="let item of fieldOeParagraphs"
+      label="{{ item.fieldOeText }}">
+      <div [innerHTML]="item.fieldOeTextLong"></div>
+  </ecl-accordion-item>
+</ecl-accordion>
