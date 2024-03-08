@@ -22,9 +22,18 @@
   },
   "private": true,
   "dependencies": {
-    "@eui/deps-base": "17.2.0"
+    "@eui/deps-base": "17.2.2"
   },
   "devDependencies": {
     "husky": "9.0.11"
+  },
+  "resolutions": {
+    "es5-ext": ">=0.10.63",
+    "vite": ">=4.5.2",
+    "jsrsasign": ">=11.0.0",
+    "axios": ">=0.28.0",
+    "undici": ">=5.28.3",
+    "semver": ">=7.5.2",
+    "postcss": ">=8.4.31"
   }
 }
