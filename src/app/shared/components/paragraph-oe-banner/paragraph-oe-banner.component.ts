@@ -7,8 +7,11 @@ type BannerVariant = "text-box" | "image-overlay" | "text-highlight" | "plain-ba
   templateUrl: './paragraph-oe-banner.component.html'
 })
 export class ParagraphOeBannerComponent {
+
   @Input() fieldOeMedia: {
-    mediaFileUrl: string,
+    mediaFileUrl: {
+      path: string
+    },
     mediaFileAlt: string
   };
   @Input() fieldOeTitle: string;
@@ -16,9 +19,12 @@ export class ParagraphOeBannerComponent {
   @Input() credit: string;
   @Input() oeParagraphsVariant: BannerVariant;
   @Input() fieldOeBannerAlignment: string;
+  @Input() fieldOeBannerSize: string;
   @Input() fieldOeBannerFullWidth: boolean;
   @Input() fieldOeLink: {
     title: string,
-    uri: string
+    uri: {
+      path: string
+    },
   };
 }
