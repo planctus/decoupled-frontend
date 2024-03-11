@@ -14,7 +14,7 @@
     "build": "eui-scripts build-app",
     "build-prod": "run-p start-mock-server build-prod-eui",
     "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
-    "build-prod-eui": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod && kill-server",
+    "build-prod-eui": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod && npm run kill-server",
     "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
     "build-prod-stats": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --statsJson",
     "kill-server": "curl -X POST http://localhost:4000/shutdown && rm server.pid",
