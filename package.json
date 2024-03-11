@@ -6,23 +6,28 @@
     "lint": "eslint --ext .ts,.tsx src/",
     "ng": "ng",
     "prepare": "husky",
-    "start-mock-server": "nodemon --watch ./mock ./mock/server.js",
-    "start-serve": "eui-scripts serve-app --configuration=proxy-mock",
+    "start-mock-server": "cd graphQL-server && npm run start",
+    "start-serve": "eui-scripts serve-app",
     "start": "npm-run-all --parallel start-mock-server start-serve",
     "start-proxy": "eui-scripts serve-app --configuration=proxy",
     "start-local": "eui-scripts serve-app",
     "build": "eui-scripts build-app",
+    "build-prod": "run-p start-mock-server build-prod-eui",
     "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
-    "build-prod": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
+    "build-prod-eui": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod && npm run kill-server",
     "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
     "build-prod-stats": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --statsJson",
+    "kill-server": "curl -X POST http://localhost:4000/shutdown && rm server.pid",
     "app:build": "eui-scripts build-app",
     "app:inject-config": "eui-scripts inject-config-app",
     "generate-changelog": "eui-scripts generate-changelog"
   },
   "private": true,
   "dependencies": {
-    "@eui/deps-base": "17.2.2"
+    "@eui/deps-base": "17.2.2",
+    "apollo-angular": "6.0.0",
+    "@apollo/client": "^3.0.0",
+    "graphql": "^16"
   },
   "devDependencies": {
     "husky": "9.0.11"
