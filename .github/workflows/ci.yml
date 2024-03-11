@@ -34,6 +34,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
+      - name: Install server dependencies
+        run: cd graphQL-server && yarn install --frozen-lockfile
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Test
@@ -47,6 +49,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
+      - name: Install server dependencies
+        run: cd graphQL-server && yarn install --frozen-lockfile
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build app
@@ -69,6 +73,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18.18.2
+      - name: Install server dependencies
+        run: cd graphQL-server && yarn install --frozen-lockfile
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Package application
