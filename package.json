@@ -12,11 +12,12 @@
     "start-proxy": "eui-scripts serve-app --configuration=proxy",
     "start-local": "eui-scripts serve-app",
     "build": "eui-scripts build-app",
-    "build-prod": "npm-run-all --parallel start-mock-server build-prod-eui",
+    "build-prod": "run-s start-mock-server build-prod-eui kill-server",
     "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
     "build-prod-eui": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
     "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
     "build-prod-stats": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --statsJson",
+    "kill-server": "curl -X POST http://localhost:4000/shutdown && rm server.pid",
     "app:build": "eui-scripts build-app",
     "app:inject-config": "eui-scripts inject-config-app",
     "generate-changelog": "eui-scripts generate-changelog"

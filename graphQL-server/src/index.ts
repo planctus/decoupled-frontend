@@ -12063,5 +12063,19 @@ app.use(
   expressMiddleware(server),
 );
 
+app.post('/shutdown', (req, res) => {
+  console.log('Received shutdown request. Initiating graceful shutdown...');
+  res.sendStatus(200);
+  process.kill(process.pid, 'SIGTERM');
+});
+
 await new Promise<void>((resolve) => httpServer.listen({ port: 4000 }, resolve));
 console.log(`🚀 Server ready at http://localhost:4000/graphql`);
+
+process.on('SIGTERM', () => {
+  console.log('Received SIGTERM signal.');
+  httpServer.close(() => {
+    console.log('Server has gracefully terminated.');
+    process.exit(0);
+  });
+});
