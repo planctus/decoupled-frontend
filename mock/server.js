@@ -1,23 +1,38 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const { ApolloServer, gql } = require("apollo-server-express");
+const express = require("express");
+const { homepageData } = require("./data");
+const cors = require('cors');
+
+const typeDefs = gql(require("fs").readFileSync("mock/schema.graphql", "utf-8"));
+
+const resolvers = {
+  Query: {
+    content: () => homepageData,
+  },
+};
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  cacheControl: {
+    defaultMaxAge: 0,
+    calculateHttpHeaders: false,
+  },
+});
 const app = express();
-const low = require('lowdb');
-const FileAsync = require('lowdb/adapters/FileAsync');
-const adapter = new FileAsync('mock/db/db.json');
-const db = low(adapter);
-const port = 3000;
 
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-// const cors = require('cors');
-// if needed to be reached from another localhost server for local testing a distributed app f.e.
-// app.use(cors({
-//     origin: 'http://127.0.0.1:8080',
-//     credentials: true,
-// }));
+app.use(cors());
+app.options('*', cors());
 
-require('./app/routes')(app, db);
+async function startServer() {
+  await server.start();
+  server.applyMiddleware({ app });
+}
 
-app.listen(port, () => {
-    console.log('We are live on ' + port);
+startServer();
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(4000, () => {
+  console.log(`Server running on port ${PORT}`);
 });
