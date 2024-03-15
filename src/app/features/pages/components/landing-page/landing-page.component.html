@@ -1,5 +1,5 @@
 <div *ngIf="homepageData">
-  <div *ngFor="let paragraph of homepageData.data.content.paragraphs" class="ecl-container ecl-u-mb-2xl">
+  <div *ngFor="let paragraph of homepageData.content.paragraphs" class="ecl-container ecl-u-mb-2xl">
     <ng-container *ngIf="paragraph.__typename === 'ParagraphOeRichText'">
       <app-ecl-paragraph-oe-rich-text [fieldOeTextLong]="paragraph.fieldOeTextLong"></app-ecl-paragraph-oe-rich-text>
     </ng-container>
@@ -24,19 +24,23 @@
         [oeParagraphsVariant]="paragraph.oeParagraphsVariant"
         [fieldOeBannerAlignment]="paragraph.fieldOeBannerAlignment"
         [fieldOeLink]="paragraph.fieldOeLink"
-        [fieldOeMedia]="paragraph.fieldOeMedia">
+        [fieldOeMedia]="paragraph.fieldOeMedia"
+        [fieldOeBannerSize]="paragraph.fieldOeBannerSize"
+        [fieldOeBannerFullWidth]="paragraph.fieldOeBannerFullWidth"
+      >
       </app-ecl-paragraph-oe-banner>
     </ng-container>
-    <ng-container *ngIf="paragraph.__typename === 'featured'">
+  </div>
+  <div class="ecl-container ecl-u-mb-2xl">
+    <ng-container *ngIf="homepageData.content.featured">
       <app-ecl-featured-item
-        [description]="paragraph.description"
-        [isExtended]="paragraph.isExtended"
-        [title]="paragraph.title"
-        [alignment]="paragraph.alignment"
-        [imageCaption]="paragraph.imageCaption"
-        [imageUrl]="paragraph.imageUrl"
-        [imageAlt]="paragraph.imageAlt">
+        [description]="homepageData.content.featured.description"
+        [isExtended]="homepageData.content.featured.isExtended"
+        [title]="homepageData.content.featured.title"
+        [alignment]="homepageData.content.featured.alignment"
+        [imageCaption]="homepageData.content.featured.imageCaption"
+        [imageUrl]="homepageData.content.featured.imageUrl"
+        [imageAlt]="homepageData.content.featured.imageAlt">
       </app-ecl-featured-item>
     </ng-container>
-  </div>
 </div>

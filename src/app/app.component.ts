@@ -1,10 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-
-import {
-    EclMenuItemSelectEvent,
-} from '@eui/ecl';
 
 @Component({
     selector: 'app-root',
@@ -18,9 +13,5 @@ export class AppComponent implements OnDestroy {
 
     ngOnDestroy() {
         console.log('destroying');
-    }
-
-    onMenuItemSelected(evt: EclMenuItemSelectEvent) {
-        console.log('menu item selected', evt);
     }
 }

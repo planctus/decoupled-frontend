@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Module1RoutingModule } from './module1-routing.module';
-import { HomepageComponent } from './components/homepage/homepage.component';
+import { PagesRoutingModule } from './pages-routing.module';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 import { SharedModule } from '@shared/shared.module';
 
 @NgModule({
     imports: [
         SharedModule,
-        Module1RoutingModule,
+        PagesRoutingModule,
     ],
     declarations: [
-        HomepageComponent
+        LandingPageComponent
     ],
 })
 export class Module {

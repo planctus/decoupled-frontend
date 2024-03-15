@@ -1,0 +1,31 @@
+<ecl-site-header siteName="Site name">
+  <ecl-site-header-action>
+      <ecl-site-header-language></ecl-site-header-language>
+  </ecl-site-header-action>
+
+  <ecl-menu>
+    <ng-container *ngFor="let menuItem of menuItems">
+      <ecl-menu-item label="{{ menuItem.label }}" href="{{ menuItem.path }}"></ecl-menu-item>
+    </ng-container>
+  </ecl-menu>
+</ecl-site-header>
+
+<ecl-page-header>
+  <ecl-breadcrumb>
+      <ecl-breadcrumb-segment>Home</ecl-breadcrumb-segment>
+      <ecl-breadcrumb-segment>European Commission</ecl-breadcrumb-segment>
+      <ecl-breadcrumb-segment [isCurrentPage]="true">ECL</ecl-breadcrumb-segment>
+  </ecl-breadcrumb>
+
+  <div eclPageHeaderMeta>
+      <span eclPageHeaderMetaItem>
+          Auto generated template
+      </span>
+  </div>
+  <h1 eclPageHeaderTitle>Europa Component Library</h1>
+  <div eclPageHeaderDescriptionContainer>
+      <p eclPageHeaderDescription>
+          The Europa Component Library (ECL) is a comprehensive style guide containing the design elements and visual standards that make up all Europa websites and applications.
+      </p>
+  </div>
+</ecl-page-header>

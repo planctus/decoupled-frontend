@@ -3,6 +3,9 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+
 import { EclAllModule } from '@eui/ecl';
 import { ParagraphOeBannerComponent } from './components/paragraph-oe-banner/paragraph-oe-banner.component';
 import { ParagraphOeAccordionComponent } from './components/paragraph-oe-accordion/paragraph-oe-accordion.component';
@@ -19,14 +22,18 @@ const MODULES = [
 @NgModule({
     imports: [...MODULES],
     declarations: [
+        HeaderComponent,
+        FooterComponent,
         ParagraphOeAccordionComponent,
         ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
         BlockquoteComponent,
-        FeaturedItemComponent
+        FeaturedItemComponent,
     ],
     exports: [
         ...MODULES,
+        HeaderComponent,
+        FooterComponent,
         ParagraphOeAccordionComponent,
         ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,

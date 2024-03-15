@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MockService } from '@shared/services/mock.services';
 
 @Component({
-  templateUrl: './homepage.component.html'
+  templateUrl: './landing-page.component.html'
 })
-export class HomepageComponent implements OnInit {
+export class LandingPageComponent implements OnInit {
   homepageData: any; // Adjust type based on the response structure
 
   constructor(private mockService: MockService) {}
@@ -15,7 +15,7 @@ export class HomepageComponent implements OnInit {
 
   getHomepageData(): void {
     this.mockService.getHomepageData().subscribe((data: any) => {
-      this.homepageData = data;
+      this.homepageData = data.data;
     });
   }
 }
