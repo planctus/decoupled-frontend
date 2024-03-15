@@ -16,6 +16,7 @@ export class ParagraphOeBannerComponent {
   @Input() credit: string;
   @Input() oeParagraphsVariant: BannerVariant;
   @Input() fieldOeBannerAlignment: string;
+  @Input() fieldOeBannerSize: string;
   @Input() fieldOeBannerFullWidth: boolean;
   @Input() fieldOeLink: {
     title: string,
