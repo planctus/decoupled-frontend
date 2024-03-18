@@ -5,8 +5,7 @@ import {
     I18nService,
 } from '@eui/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, zip } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',

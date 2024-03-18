@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppStarterService } from './app-starter.service';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,7 @@ import { AppStarterService } from './app-starter.service';
         BrowserAnimationsModule,
         CoreModule,
         AppRoutingModule,
+        ScullyLibModule,
     ],
     providers: [
         AppStarterService,

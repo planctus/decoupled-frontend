@@ -1,0 +1,410 @@
+{
+  "version": "6.0",
+  "nxVersion": "18.1.1",
+  "deps": {
+    "@angular/compiler": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/platform-server": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/ssr": "^17.3.0",
+    "@eui/deps-base": "17.2.2",
+    "@scullyio/init": "^2.1.41",
+    "@scullyio/ng-lib": "^2.1.0",
+    "@scullyio/platform-server": "^2.1.0",
+    "@scullyio/scully": "^2.1.0",
+    "nx": "^18.1.1",
+    "ts-node": "^10.9.2",
+    "husky": "9.0.11"
+  },
+  "pathMappings": {
+    "@shared/*": [
+      "src/app/shared/*"
+    ]
+  },
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".browserslistrc",
+        "hash": "17600754102500844387"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "17338126418443487094"
+      },
+      {
+        "file": ".euirc.json",
+        "hash": "56033701183845310"
+      },
+      {
+        "file": ".github/workflows/ci.yml",
+        "hash": "14833671772270358530"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11415636991865367772"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "14665519508898085874"
+      },
+      {
+        "file": ".netlify/functions/graphQL.ts",
+        "hash": "16423680935228920018"
+      },
+      {
+        "file": ".nvmrc",
+        "hash": "10563313572918662023"
+      },
+      {
+        "file": "README.md",
+        "hash": "12243949248851864544"
+      },
+      {
+        "file": "angular.json",
+        "hash": "11423261679857646851"
+      },
+      {
+        "file": "dist-server/3rdpartylicenses.txt",
+        "hash": "17345906131532763839"
+      },
+      {
+        "file": "dist-server/658.js",
+        "hash": "13833223784848345929"
+      },
+      {
+        "file": "dist-server/776.js",
+        "hash": "16567884641104147957"
+      },
+      {
+        "file": "dist-server/main.js",
+        "hash": "15016409488771353231"
+      },
+      {
+        "file": "graphQL-server/src/types/schema.txt",
+        "hash": "17840359504463003242"
+      },
+      {
+        "file": "mock/app/models/user.js",
+        "hash": "9424646036571888026"
+      },
+      {
+        "file": "mock/app/routes/index.js",
+        "hash": "15500861882393865855"
+      },
+      {
+        "file": "mock/app/routes/user_routes.js",
+        "hash": "6990783951609365209"
+      },
+      {
+        "file": "mock/db/db.json",
+        "hash": "10580236334061912194"
+      },
+      {
+        "file": "mock/server.js",
+        "hash": "16246456052479446946"
+      },
+      {
+        "file": "netlify.toml",
+        "hash": "11136278608798734974"
+      },
+      {
+        "file": "package.json",
+        "hash": "10924078054639520419"
+      },
+      {
+        "file": "prerender.ts",
+        "hash": "6649926592568301499"
+      },
+      {
+        "file": "proxy-mock.conf.json",
+        "hash": "7065824124825578785"
+      },
+      {
+        "file": "proxy.conf.json",
+        "hash": "13373564750221352253"
+      },
+      {
+        "file": "scripts/audit.sh",
+        "hash": "2120485940142344363"
+      },
+      {
+        "file": "server.pid",
+        "hash": "11527257656617623337"
+      },
+      {
+        "file": "src/.eslintrc.json",
+        "hash": "8748843184631786147"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "2548016014964469374"
+      },
+      {
+        "file": "src/app/app-starter.service.ts",
+        "hash": "10029172960420645442"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "3021221531864914976"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "7032563502187384924"
+      },
+      {
+        "file": "src/app/app.config.server.ts",
+        "hash": "16120879445098345009"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "2045681525014063"
+      },
+      {
+        "file": "src/app/app.server.module.ts",
+        "hash": "2048381977527144433"
+      },
+      {
+        "file": "src/app/core/components/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/core/core.module.ts",
+        "hash": "13307679320347848356"
+      },
+      {
+        "file": "src/app/core/reducers/index.ts",
+        "hash": "5640419741532368040"
+      },
+      {
+        "file": "src/app/features/home/home-routing.module.ts",
+        "hash": "18378922987332171733"
+      },
+      {
+        "file": "src/app/features/home/home.component.html",
+        "hash": "16536318849338826492"
+      },
+      {
+        "file": "src/app/features/home/home.component.ts",
+        "hash": "11732976066108779994"
+      },
+      {
+        "file": "src/app/features/home/home.module.ts",
+        "hash": "8451013503189216094"
+      },
+      {
+        "file": "src/app/features/module1/components/homepage/homepage.component.html",
+        "hash": "10258664073814748252"
+      },
+      {
+        "file": "src/app/features/module1/components/homepage/homepage.component.ts",
+        "hash": "16917634510245947317"
+      },
+      {
+        "file": "src/app/features/module1/module1-routing.module.ts",
+        "hash": "6789878848417689538"
+      },
+      {
+        "file": "src/app/features/module1/module1.module.ts",
+        "hash": "11508210931428551339"
+      },
+      {
+        "file": "src/app/features/module2/module2-routing.module.ts",
+        "hash": "1924093705167801999"
+      },
+      {
+        "file": "src/app/features/module2/module2.component.html",
+        "hash": "127144459300020184"
+      },
+      {
+        "file": "src/app/features/module2/module2.component.ts",
+        "hash": "16886626862855987950"
+      },
+      {
+        "file": "src/app/features/module2/module2.module.ts",
+        "hash": "6030112908805993443"
+      },
+      {
+        "file": "src/app/shared/components/blockquote/blockquote.component.html",
+        "hash": "4284784835224672438"
+      },
+      {
+        "file": "src/app/shared/components/blockquote/blockquote.component.ts",
+        "hash": "3697740578144590756"
+      },
+      {
+        "file": "src/app/shared/components/featured-item/featured-item.component.html",
+        "hash": "17464646943128184737"
+      },
+      {
+        "file": "src/app/shared/components/featured-item/featured-item.component.ts",
+        "hash": "10010479469946936878"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-accordion/paragraph-oe-accordion.component.html",
+        "hash": "13272312014102102883"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-accordion/paragraph-oe-accordion.component.ts",
+        "hash": "10846383030290466773"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-banner/paragraph-oe-banner.component.html",
+        "hash": "9512677866483879702"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-banner/paragraph-oe-banner.component.ts",
+        "hash": "16377757639721734889"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-rich-text/paragraph-oe-rich-text.component.html",
+        "hash": "9035750658618433167"
+      },
+      {
+        "file": "src/app/shared/components/paragraph-oe-rich-text/paragraph-oe-rich-text.component.ts",
+        "hash": "10673853152056152629"
+      },
+      {
+        "file": "src/app/shared/services/mock.services.ts",
+        "hash": "3247693949549730840"
+      },
+      {
+        "file": "src/app/shared/shared.module.ts",
+        "hash": "2517175098406144929"
+      },
+      {
+        "file": "src/app/shared/testing/router.mock.ts",
+        "hash": "16111450467472685734"
+      },
+      {
+        "file": "src/assets/config/env-json-config-dev.json",
+        "hash": "4116229954751274327"
+      },
+      {
+        "file": "src/assets/config/env-json-config-prod.json",
+        "hash": "4116229954751274327"
+      },
+      {
+        "file": "src/assets/config/env-json-config.json",
+        "hash": "8141811405867708495"
+      },
+      {
+        "file": "src/assets/env-json-config.json",
+        "hash": "8141811405867708495"
+      },
+      {
+        "file": "src/assets/i18n/en.json",
+        "hash": "10121392092000037925"
+      },
+      {
+        "file": "src/assets/i18n/fr.json",
+        "hash": "15963884412757883710"
+      },
+      {
+        "file": "src/config/global.ts",
+        "hash": "1557839297535310604"
+      },
+      {
+        "file": "src/config/index.ts",
+        "hash": "16840354414732781040"
+      },
+      {
+        "file": "src/config/modules.ts",
+        "hash": "2088024598803795524"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/base.css",
+        "hash": "6204767174569381253"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/block-navigation.js",
+        "hash": "1801078621803424330"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/favicon.png",
+        "hash": "13402560043085226048"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/index.html",
+        "hash": "6727071222243613895"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/prettify.css",
+        "hash": "8163588510556258587"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/prettify.js",
+        "hash": "15884788582061322779"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/sort-arrow-sprite.png",
+        "hash": "254831142482329146"
+      },
+      {
+        "file": "src/coverage/Chrome Headless 122.0.6261.111 (Linux x86_64)/sorter.js",
+        "hash": "17053119163225536857"
+      },
+      {
+        "file": "src/dummy.spec.ts",
+        "hash": "6598503061498280248"
+      },
+      {
+        "file": "src/environments/environment.prod.ts",
+        "hash": "1714320758984194096"
+      },
+      {
+        "file": "src/environments/environment.ts",
+        "hash": "13620140249037112415"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "1190691090813842973"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "5204727128521381625"
+      },
+      {
+        "file": "src/karma.conf.js",
+        "hash": "16520168244635272370"
+      },
+      {
+        "file": "src/main.server.ts",
+        "hash": "12100462326429856469"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "10443177243843590529"
+      },
+      {
+        "file": "src/polyfills.ts",
+        "hash": "14155753673410118315"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "5195668842064076916"
+      },
+      {
+        "file": "src/tsconfig.app.json",
+        "hash": "11150595413747098747"
+      },
+      {
+        "file": "src/tsconfig.spec.json",
+        "hash": "3977017221157261452"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "10715374992885004218"
+      },
+      {
+        "file": "tsconfig.server.json",
+        "hash": "7287123483472381759"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "15397427410040121506"
+      }
+    ]
+  }
+}

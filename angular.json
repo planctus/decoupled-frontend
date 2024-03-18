@@ -23,7 +23,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist",
+                        "outputPath": "dist/app/",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -79,8 +79,8 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "1mb",
-                                    "maximumError": "2mb"
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "20mb"
                                 }
                             ]
                         },
@@ -174,7 +174,56 @@
                             }
                         ]
                     }
-                }
+                },
+                "server": {
+                  "builder": "@angular-devkit/build-angular:server",
+                  "options": {
+                    "outputPath": "dist-server",
+                    "main": "src/main.server.ts",
+                    "tsConfig": "tsconfig.server.json"
+                  },
+                  "configurations": {
+                    "development": {
+                      "optimization": false,
+                      "sourceMap": true,
+                      "extractLicenses": false
+                    },
+                    "production": {
+                      "buildOptimizer": true,
+                      "outputHashing": "media",
+                      "fileReplacements": [
+                        {
+                          "replace": "src/environments/environment.ts",
+                          "with": "src/environments/environment.prod.ts"
+                        }
+                      ],
+                      "optimization": true,
+                      "sourceMap": false,
+                      "extractLicenses": true,
+                      "vendorChunk": false
+                    }
+                  },
+                  "defaultConfiguration": "production"
+                },
+                "prerender": {
+                    "builder": "@angular-devkit/build-angular:prerender",
+                    "options": {
+                      "routes": [
+                        "/"
+                      ]
+                    },
+                    "configurations": {
+                      "production": {
+                        "browserTarget": "app:build:production",
+                        "serverTarget": "app:server:production"
+                      },
+                      "development": {
+                        "browserTarget": "app:build:development",
+                        "serverTarget": "app:server:development"
+                      }
+                    },
+                    "defaultConfiguration": "production"
+                  }
             }
         }
     }
