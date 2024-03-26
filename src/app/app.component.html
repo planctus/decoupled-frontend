@@ -6,7 +6,15 @@
         
         <ecl-menu>
             <ng-container *ngFor="let menuItem of menuItems">
-            <ecl-menu-item label="{{ menuItem.label }}" href="{{ menuItem.path }}"></ecl-menu-item>
+                <ecl-menu-item [label]="menuItem.label" [href]="menuItem.path">
+                    <ng-container *ngIf="menuItem.children && menuItem.children.length > 0">
+                        <ecl-menu-mega>
+                            <ng-container *ngFor="let childItem of menuItem.children">
+                                <ecl-menu-mega-item [label]="childItem.label" [href]="menuItem.path + '/' + childItem.path"></ecl-menu-mega-item>
+                            </ng-container>
+                        </ecl-menu-mega>
+                    </ng-container>
+                </ecl-menu-item>
             </ng-container>
         </ecl-menu>
     </ecl-site-header>

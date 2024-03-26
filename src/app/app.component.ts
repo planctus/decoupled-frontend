@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { RouteService } from 'src/app/route.service';
+import { EclMenuItemSelectEvent } from '@eui/ecl';
 
-import {
-    EclMenuItemSelectEvent,
-} from '@eui/ecl';
+interface MenuItem {
+    label: string;
+    path: string;
+    children?: MenuItem[];
+}
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit {
-    menuItems: { label: string, path: string }[] = [];
+    menuItems: MenuItem[] = [];
 
-    // @ts-ignore
     constructor(private routeService: RouteService) {}
 
     ngOnInit() {
         this.routeService.getRoutes().subscribe(routes => {
-            this.menuItems = routes.map(route => ({ label: route.label, path: route.path }));
+            this.menuItems = routes;
         });
     }
 

@@ -11,8 +11,13 @@ export class RouteService {
   getRoutes(): Observable<any[]> {
 
     const exampleRoutes = [
-      { path: 'home', label: 'Home' },
-      { path: 'about', label: 'About' },
+      { path: 'home', label: 'Home'},
+      { path: 'landing-page', label: 'landing-pages', children: [
+        {
+          path: 'about',
+          label: 'About'
+        }
+      ] },
     ];
 
     return of(exampleRoutes);
