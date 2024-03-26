@@ -3,7 +3,7 @@ import { RouterModule, Router, Routes } from '@angular/router';
 import { RouteService } from './route.service';
 
 const staticRoutes: Routes = [
-  { path: '', loadChildren: () => import('./features/module1/module1.module').then(m => m.Module) },
+    { path: '', loadChildren: () => import('./features/pages/pages.module').then(m => m.PagesModule) },
 ];
 
 @NgModule({
@@ -20,7 +20,7 @@ export class AppRoutingModule {
         ...staticRoutes, // Include existing routes
         ...dynamicRoutes.map(route => ({
           path: route.path,
-          loadChildren: () => import(`./features/module1/module1.module`).then(m => m.Module),
+          loadChildren: () => import(`./features/pages/pages.module`).then(m => m.PagesModule),
         }))
       ];
       this.router.resetConfig(updatedRoutes);
