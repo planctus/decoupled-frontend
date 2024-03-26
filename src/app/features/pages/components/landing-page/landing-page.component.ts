@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MockService } from '@shared/services/mock.services';
 
 @Component({
-  templateUrl: './homepage.component.html'
+  templateUrl: './landing-page.component.html'
 })
 export class HomepageComponent implements OnInit {
   homepageData: any; // Adjust type based on the response structure
