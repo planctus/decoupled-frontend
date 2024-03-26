@@ -22,7 +22,7 @@
   },
   "private": true,
   "dependencies": {
-    "@eui/deps-base": "17.2.2"
+    "@eui/deps-base": "17.3.0"
   },
   "devDependencies": {
     "husky": "9.0.11"
@@ -34,6 +34,10 @@
     "axios": ">=0.28.0",
     "undici": ">=5.28.3",
     "semver": ">=7.5.2",
-    "postcss": ">=8.4.31"
+    "postcss": ">=8.4.31",
+    "follow-redirects": ">=1.15.6",
+    "express": ">=4.19.2",
+    "katex": ">=0.16.10",
+    "webpack-dev-middleware": ">=5.3.4" 
   }
 }
