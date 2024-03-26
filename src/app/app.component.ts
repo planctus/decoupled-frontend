@@ -1,6 +1,5 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { RouteService } from 'src/app/route.service';
 
 import {
     EclMenuItemSelectEvent,
@@ -10,14 +9,16 @@ import {
     selector: 'app-root',
     templateUrl: './app.component.html',
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit {
+    menuItems: { label: string, path: string }[] = [];
 
     // @ts-ignore
-    constructor(private store: Store<any>) {
-    }
+    constructor(private routeService: RouteService) {}
 
-    ngOnDestroy() {
-        console.log('destroying');
+    ngOnInit() {
+        this.routeService.getRoutes().subscribe(routes => {
+            this.menuItems = routes.map(route => ({ label: route.label, path: route.path }));
+        });
     }
 
     onMenuItemSelected(evt: EclMenuItemSelectEvent) {

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppStarterService } from './app-starter.service';
+import { RouteService } from './route.service';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { AppStarterService } from './app-starter.service';
     ],
     providers: [
         AppStarterService,
+        RouteService,
         {
             provide: APP_INITIALIZER,
             useFactory: (appStarterService) => () => new Promise<void>((resolve) => {
