@@ -6,7 +6,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {
     CachePreventionInterceptor,
-    CorsSecurityInterceptor,
     CsrfPreventionInterceptor,
     EuLoginSessionTimeoutHandlingInterceptor,
     CoreModule as EuiCoreModule,
@@ -49,13 +48,6 @@ import { SharedModule } from '@shared/shared.module';
         {
             provide: EUI_CONFIG_TOKEN,
             useValue: { appConfig, environment }
-        },
-        {
-            // Sets the withCredentials on Ajax Request to send the JSESSIONID cookie to another domain.
-            // This is necessary when a request is being made to another domain that is protected by EU Login.
-            provide: HTTP_INTERCEPTORS,
-            useClass: CorsSecurityInterceptor,
-            multi: true,
         },
         {
             // WARNING: in case of OpenID this is not needed since OpenID is stateless therefore no revalidation needed.
