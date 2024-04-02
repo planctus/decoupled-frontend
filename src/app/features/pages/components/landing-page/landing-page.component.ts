@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PagesService } from '@shared/services/pages.services';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   templateUrl: './landing-page.component.html'
 })
-export class LandingPageComponent implements OnInit, OnDestroy {
+export class LandingPageComponent implements OnDestroy {
   paragraphs: any;
   nodeUrl: string;
   nodeDataSubscription: Subscription; // Subscription for getNodeData
@@ -14,14 +15,10 @@ export class LandingPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private pagesService: PagesService,
-    private route: ActivatedRoute
-  ) {}
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.nodeUrl = params.get('nodeUrl');
-      this.loadData();
-    });
+    private router: Router
+  ) {
+    this.nodeUrl = this.getLastPartOfUrl(this.router.url);
+    this.loadData();
   }
 
   ngOnDestroy(): void {
@@ -44,6 +41,12 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.homepageDataSubscription = this.pagesService.getHomepageData().subscribe((response: any) => {
       this.paragraphs = response.data.entityById.paragraphs;
     });
+  }
+
+  private getLastPartOfUrl(url: string): string {
+    // Extract the last part of the URL (nodeUrl)
+    const parts = url.split('/');
+    return parts[parts.length - 1];
   }
 
   private loadData(): void {
