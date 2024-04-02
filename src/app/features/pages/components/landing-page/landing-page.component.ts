@@ -4,8 +4,8 @@ import { PagesService } from '@shared/services/pages.services';
 @Component({
   templateUrl: './landing-page.component.html'
 })
-export class HomepageComponent implements OnInit {
-  homepageData: any; // Adjust type based on the response structure
+export class LandingPageComponent implements OnInit {
+  homepageParagraphs: any; // Adjust type based on the response structure
 
   constructor(private pagesService: PagesService) {}
 
@@ -14,8 +14,8 @@ export class HomepageComponent implements OnInit {
   }
 
   getHomepageData(): void {
-    this.pagesService.getHomepageData().subscribe((data: any) => {
-      this.homepageData = data;
+    this.pagesService.getHomepageData().subscribe((response: any) => {
+      this.homepageParagraphs = response.data.entityById.paragraphs;
     });
   }
 }

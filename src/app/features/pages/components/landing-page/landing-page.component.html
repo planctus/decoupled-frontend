@@ -1,5 +1,5 @@
-<div *ngIf="homepageData">
-  <div *ngFor="let paragraph of homepageData.data.content.paragraphs" class="ecl-container ecl-u-mb-2xl">
+<div *ngIf="homepageParagraphs">
+  <div *ngFor="let paragraph of homepageParagraphs" class="ecl-container ecl-u-mb-2xl">
     <ng-container *ngIf="paragraph.__typename === 'ParagraphOeRichText'">
       <app-ecl-paragraph-oe-rich-text [fieldOeTextLong]="paragraph.fieldOeTextLong"></app-ecl-paragraph-oe-rich-text>
     </ng-container>
