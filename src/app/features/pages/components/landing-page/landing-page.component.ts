@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { PagesService } from '@shared/services/pages.services';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { CONFIG_TOKEN, EuiAppConfig } from '@eui/core';
 
 @Component({
   templateUrl: './landing-page.component.html'
@@ -15,10 +16,15 @@ export class LandingPageComponent implements OnDestroy {
 
   constructor(
     private pagesService: PagesService,
-    private router: Router
+    private router: Router,
+    @Inject(CONFIG_TOKEN) private appConfig: EuiAppConfig,
   ) {
     this.nodeUrl = this.getLastPartOfUrl(this.router.url);
-    this.loadData();
+    if (!this.nodeUrl) {
+      const languageCode = appConfig.global.i18n?.i18nService?.defaultLanguage;
+      this.nodeUrl = 'index_' + languageCode;
+    }
+    this.getNodeData(this.nodeUrl);
   }
 
   ngOnDestroy(): void {
@@ -37,23 +43,9 @@ export class LandingPageComponent implements OnDestroy {
     });
   }
 
-  getHomepageData(): void {
-    this.homepageDataSubscription = this.pagesService.getHomepageData().subscribe((response: any) => {
-      this.paragraphs = response.data.entityById.paragraphs;
-    });
-  }
-
   private getLastPartOfUrl(url: string): string {
     // Extract the last part of the URL (nodeUrl)
     const parts = url.split('/');
     return parts[parts.length - 1];
-  }
-
-  private loadData(): void {
-    if (this.nodeUrl) {
-      this.getNodeData(this.nodeUrl);
-    } else {
-      this.getHomepageData();
-    }
   }
 }
