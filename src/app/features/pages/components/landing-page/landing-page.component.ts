@@ -20,12 +20,17 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.nodeUrl = params.get('nodeUrl');
+      this.loadData();
     });
+  }
 
-    if (this.nodeUrl) {
-      this.getNodeData(this.nodeUrl);
-    } else {
-      this.getHomepageData();
+  ngOnDestroy(): void {
+    // Unsubscribe from subscriptions when component is destroyed
+    if (this.nodeDataSubscription) {
+      this.nodeDataSubscription.unsubscribe();
+    }
+    if (this.homepageDataSubscription) {
+      this.homepageDataSubscription.unsubscribe();
     }
   }
 
@@ -41,13 +46,11 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    // Unsubscribe from subscriptions when component is destroyed
-    if (this.nodeDataSubscription) {
-      this.nodeDataSubscription.unsubscribe();
-    }
-    if (this.homepageDataSubscription) {
-      this.homepageDataSubscription.unsubscribe();
+  private loadData(): void {
+    if (this.nodeUrl) {
+      this.getNodeData(this.nodeUrl);
+    } else {
+      this.getHomepageData();
     }
   }
 }

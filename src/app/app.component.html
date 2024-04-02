@@ -6,7 +6,7 @@
 
         <ecl-menu>
             <ng-container *ngFor="let menuItem of menuItems">
-                <ecl-menu-item [label]="menuItem.label" [href]="menuItem.path">
+                <ecl-menu-item [label]="menuItem.label" [routerLink]="[menuItem.path]">
                     <ng-container *ngIf="menuItem.children && menuItem.children.length > 0">
                         <ecl-menu-mega>
                             <ng-container *ngFor="let childItem of menuItem.children">
