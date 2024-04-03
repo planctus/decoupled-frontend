@@ -27,14 +27,14 @@
         [fieldOeMedia]="paragraph.fieldOeMedia">
       </app-ecl-paragraph-oe-banner>
     </ng-container>
-    <ng-container *ngIf="paragraph.__typename === 'featured'">
+    <ng-container *ngIf="paragraph.__typename === 'ParagraphOeTextFeatureMedia'">
       <app-ecl-featured-item
-        [description]="paragraph.description"
-        [isExtended]="paragraph.isExtended"
-        [title]="paragraph.title"
+        [description]="paragraph.fieldOeTextLong"
+        [isExtended]="paragraph.fieldOeHighlighted"
+        [title]="paragraph.fieldOePlainTextLong"
         [alignment]="paragraph.alignment"
-        [imageCaption]="paragraph.imageCaption"
-        [imageUrl]="paragraph.imageUrl"
+        [imageCaption]="paragraph.fieldOeFeatureMediaTitle"
+        [imageUrl]="'http://localhost:8080/' + paragraph.fieldOeMedia.mediaFileUrl.path"
         [imageAlt]="paragraph.imageAlt">
       </app-ecl-featured-item>
     </ng-container>

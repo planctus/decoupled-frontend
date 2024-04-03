@@ -21,6 +21,26 @@ export class PagesService {
             status
             paragraphs {
               __typename
+              ... on ParagraphOeTextFeatureMedia {
+                id
+                oeParagraphsVariant
+                fieldOeFeatureMediaTitle
+                fieldOeHighlighted
+                fieldOeLink {
+                  uri {
+                    path
+                  }
+                  title
+                }
+                fieldOeMedia {
+                  mediaFileUrl {
+                    path
+                  }
+                }
+                fieldOePlainTextLong
+                fieldOeTextLong
+                fieldOeTitle
+              }
               ... on ParagraphOeBanner {
                 id
                 fieldOeBannerSize
