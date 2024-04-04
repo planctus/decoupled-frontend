@@ -12,6 +12,8 @@
     "start-proxy": "eui-scripts serve-app --configuration=proxy",
     "start-local": "eui-scripts serve-app",
     "build": "eui-scripts build-app",
+    "build-server": "./node_modules/.bin/ng run app:server",
+    "prerender": "./node_modules/.bin/ng run app:prerender",
     "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
     "build-prod": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
     "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
@@ -22,7 +24,9 @@
   },
   "private": true,
   "dependencies": {
-    "@eui/deps-base": "17.2.2"
+    "@eui/deps-base": "17.2.2",
+    "@angular/ssr": "17.3.0",
+    "@angular/platform-server": "17.3.0"
   },
   "devDependencies": {
     "husky": "9.0.11"

@@ -385,6 +385,14 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/platform-server@17.3.0":
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-17.3.0.tgz#29e0ad05ada9280f5897fb7e693d47a984476499"
+  integrity sha512-kCtAZskxn5iKSF9yw+IALA6Otv8eqGp19R0RX/Btj7hLPEUPz1/n9pUIBLOtyE5P4xWT6JCty+vaPOdloSO9RA==
+  dependencies:
+    tslib "^2.3.0"
+    xhr2 "^0.2.0"
+
 "@angular/router@17.0.8":
   version "17.0.8"
   resolved "https://registry.yarnpkg.com/@angular/router/-/router-17.0.8.tgz#65962626dc08be54e1474f607199001007e907b9"
@@ -397,6 +405,14 @@
   resolved "https://registry.yarnpkg.com/@angular/service-worker/-/service-worker-17.0.8.tgz#22bb05fcdb3512a1ce018aba1cce45ad271152df"
   integrity sha512-oiaPTzZBWUsTrQtUH46pHGflF3asEQDHTGnqBGtRJjpVMek0c3P/7U/XTf5D06LmVxXODo4mplQXJmeWeFyhpw==
   dependencies:
+    tslib "^2.3.0"
+
+"@angular/ssr@17.3.0":
+  version "17.3.0"
+  resolved "https://registry.yarnpkg.com/@angular/ssr/-/ssr-17.3.0.tgz#8a9f35deca75951316235fdbb0e2c0e0eb82735f"
+  integrity sha512-ITJwpk1drcAn08FKQGuZXYmlhILiYOJYKnh/0eFSwSGhsvl61w/BOhsFTkRGZPZ72zAbTyqakB8BVc0ZLv1hpg==
+  dependencies:
+    critters "0.0.22"
     tslib "^2.3.0"
 
 "@assemblyscript/loader@^0.10.1":
@@ -5801,6 +5817,19 @@ critters@0.0.20:
     htmlparser2 "^8.0.2"
     postcss "^8.4.23"
     pretty-bytes "^5.3.0"
+
+critters@0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/critters/-/critters-0.0.22.tgz#ce76b1cbc70078c89d23725646357e3850236dae"
+  integrity sha512-NU7DEcQZM2Dy8XTKFHxtdnIM/drE312j2T4PCVaSUcS0oBeyT/NImpRw/Ap0zOr/1SE7SgPK9tGPg1WK/sVakw==
+  dependencies:
+    chalk "^4.1.0"
+    css-select "^5.1.0"
+    dom-serializer "^2.0.0"
+    domhandler "^5.0.2"
+    htmlparser2 "^8.0.2"
+    postcss "^8.4.23"
+    postcss-media-query-parser "^0.2.3"
 
 cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -11979,6 +12008,11 @@ postcss-loader@7.3.3:
     jiti "^1.18.2"
     semver "^7.3.8"
 
+postcss-media-query-parser@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/postcss-media-query-parser/-/postcss-media-query-parser-0.2.3.tgz#27b39c6f4d94f81b1a73b8f76351c609e5cef244"
+  integrity sha512-3sOlxmbKcSHMjlUXQZKQ06jOswE7oVkXPxmZdoB1r5l0q6gTFTQSHxNxOrCccElbW7dxNytifNEo8qidX2Vsig==
+
 postcss-merge-longhand@^5.1.7:
   version "5.1.7"
   resolved "https://registry.yarnpkg.com/postcss-merge-longhand/-/postcss-merge-longhand-5.1.7.tgz#24a1bdf402d9ef0e70f568f39bdc0344d568fb16"
@@ -14985,6 +15019,11 @@ xhr-mock@2.5.1:
   dependencies:
     global "^4.3.0"
     url "^0.11.0"
+
+xhr2@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/xhr2/-/xhr2-0.2.1.tgz#4e73adc4f9cfec9cbd2157f73efdce3a5f108a93"
+  integrity sha512-sID0rrVCqkVNUn8t6xuv9+6FViXjUVXq8H5rWOH2rz9fDNQEd4g0EA2XlcEdJXRz5BMEn4O1pJFdT+z4YHhoWw==
 
 xml2js@0.5.0:
   version "0.5.0"

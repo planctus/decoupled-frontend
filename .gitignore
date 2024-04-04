@@ -8,6 +8,7 @@
 **/out-tsc
 **/tmp
 **/test/reports
+dist-server
 
 # IDEs and editors
 /.idea
