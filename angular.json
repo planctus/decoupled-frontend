@@ -64,10 +64,6 @@
                         "node_modules/@eui/styles/dist/styles/eui-ecl-ec.css",
                         "src/styles.scss"
                       ],
-                      "prerender": true,
-                      "ssr": {
-                        "entry": "server.ts"
-                      }
                     },
                     "configurations": {
                         "production": {
@@ -184,8 +180,8 @@
                 "server": {
                   "builder": "@angular-devkit/build-angular:server",
                   "options": {
-                    "outputPath": "dist-server",
-                    "main": "src/main.server.ts",
+                    "outputPath": "dist/server",
+                    "main": "server.ts",
                     "tsConfig": "tsconfig.server.json"
                   },
                   "configurations": {
@@ -210,6 +206,20 @@
                     }
                   },
                   "defaultConfiguration": "production"
+                },
+                "serve-ssr": {
+                  "builder": "@angular-devkit/build-angular:ssr-dev-server",
+                  "configurations": {
+                    "development": {
+                      "browserTarget": "app:build:development",
+                      "serverTarget": "app:server:development"
+                    },
+                    "production": {
+                      "browserTarget": "app:build:production",
+                      "serverTarget": "app:server:production"
+                    }
+                  },
+                  "defaultConfiguration": "development"
                 },
                 "prerender": {
                     "builder": "@angular-devkit/build-angular:prerender",
