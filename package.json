@@ -24,7 +24,8 @@
     "dev:ssr": "ng run app:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build && ng run app:server",
-    "prerender": "ng run app:prerender"
+    "prerender": "ng run app:prerender",
+    "postinstall": "patch-package"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "@angular/platform-server": "17.3.0",
     "@angular/router": "^17.3.3",
     "@angular/ssr": "^17.0.9",
+    "@egjs/hammerjs": "^2.0.17",
     "@eui/deps-base": "17.2.2",
     "@ngrx/effects": "^17.1.1",
     "@ngx-translate/core": "^15.0.0",
@@ -44,6 +46,7 @@
     "http-server": "^14.1.1",
     "ngrx-store-freeze": "^0.2.4",
     "ngx-device-detector": "^7.0.0",
+    "patch-package": "^8.0.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {

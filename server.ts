@@ -12,12 +12,13 @@ import bootstrap from './src/main.server';
 export function app(): express.Express {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/browser');
-  const indexHtml = existsSync(join(distFolder, 'index.original.html'))
-    ? join(distFolder, 'index.original.html')
-    : join(distFolder, 'index.html');
+  const indexHtml = existsSync(distFolder + 'index.original.html')
+    ? distFolder + 'index.original.html'
+    : distFolder + '/index.html';
 
   const commonEngine = new CommonEngine();
-  const template = readFileSync(join(distFolder, indexHtml)).toString();
+  const template = readFileSync(indexHtml).toString();
+  /*
   const window = domino.createWindow(template.toString());
 
   global['window'] = window;
@@ -27,6 +28,7 @@ export function app(): express.Express {
   global['document'] = window.document
   global['navigator'] = window.navigator
   global['getComputedStyle'] = window.getComputedStyle;
+  */
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
