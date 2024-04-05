@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AppStarterService } from './app-starter.service';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,7 @@ import { AppStarterService } from './app-starter.service';
               return {
                 cache: new InMemoryCache(),
                 link: httpLink.create({
-                  uri: 'http://localhost:8080/web/api/graphql',
+                  uri: environment.graphqlUri,
                   withCredentials: true,
                 }),
               };
