@@ -64,6 +64,13 @@
                         "node_modules/@eui/styles/dist/styles/eui-ecl-ec.css",
                         "src/styles.scss"
                       ],
+                      "server": "src/main.server.ts",
+                      "prerender": {
+                        "routesFile": "routes.txt"
+                      },
+                      "ssr": {
+                        "entry": "server.ts"
+                      },
                     },
                     "configurations": {
                         "production": {

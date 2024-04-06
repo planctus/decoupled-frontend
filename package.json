@@ -22,7 +22,7 @@
     "generate-changelog": "eui-scripts generate-changelog",
     "serve:prerender": "http-server -c-1 dist/browser",
     "dev:ssr": "ng run app:serve-ssr",
-    "serve:ssr": "node dist/server/main.js",
+    "serve:ssr": "node dist/server/server.mjs",
     "build:ssr": "ng build && ng run app:server",
     "prerender": "ng run app:prerender",
     "postinstall": "patch-package"
@@ -41,7 +41,6 @@
     "@eui/deps-base": "17.2.2",
     "@ngrx/effects": "^17.1.1",
     "@ngx-translate/core": "^15.0.0",
-    "domino": "^2.1.6",
     "express": "^4.18.2",
     "http-server": "^14.1.1",
     "ngrx-store-freeze": "^0.2.4",

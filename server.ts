@@ -1,9 +1,7 @@
-const domino = require('domino');
-
 import 'zone.js/node';
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
-import * as express from 'express';
+import express from 'express';
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'node:path';
 import bootstrap from './src/main.server';
@@ -17,18 +15,6 @@ export function app(): express.Express {
     : distFolder + '/index.html';
 
   const commonEngine = new CommonEngine();
-  const template = readFileSync(indexHtml).toString();
-  /*
-  const window = domino.createWindow(template.toString());
-
-  global['window'] = window;
-  global['document'] = window.document;
-  global['self'] = window
-  global['IDBIndex'] = window.IDBIndex
-  global['document'] = window.document
-  global['navigator'] = window.navigator
-  global['getComputedStyle'] = window.getComputedStyle;
-  */
 
   server.set('view engine', 'html');
   server.set('views', distFolder);
@@ -69,14 +55,4 @@ function run(): void {
   });
 }
 
-// Webpack will replace 'require' with '__webpack_require__'
-// '__non_webpack_require__' is a proxy to Node 'require'
-// The below code is to ensure that the server is run only when not requiring the bundle.
-declare const __non_webpack_require__: NodeRequire;
-const mainModule = __non_webpack_require__.main;
-const moduleFilename = mainModule && mainModule.filename || '';
-if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
-  run();
-}
-
-export default bootstrap;
+run();
