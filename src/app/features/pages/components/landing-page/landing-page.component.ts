@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject } from '@angular/core';
 import { Component, OnDestroy } from '@angular/core';
 import { PagesService } from '@shared/services/pages.services';
 import { Router } from '@angular/router';
