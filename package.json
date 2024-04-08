@@ -12,7 +12,6 @@
     "start-proxy": "eui-scripts serve-app --configuration=proxy",
     "start-local": "eui-scripts serve-app",
     "build": "eui-scripts build-app",
-    "build-server": "./node_modules/.bin/ng run app:server",
     "build-dev": "eui-scripts build-app --configuration=development --configEnvTarget=dev",
     "build-prod": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod",
     "build-prod-skip-test": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --skipTest",
@@ -23,8 +22,6 @@
     "serve:prerender": "http-server -c-1 dist/browser",
     "dev:ssr": "ng run app:serve-ssr",
     "serve:ssr": "node dist/server/server.mjs",
-    "build:ssr": "ng build && ng run app:server",
-    "prerender": "ng run app:prerender",
     "postinstall": "patch-package"
   },
   "private": true,
