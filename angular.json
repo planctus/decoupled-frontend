@@ -88,8 +88,8 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "10mb",
-                                    "maximumError": "20mb"
+                                    "maximumWarning": "1mb",
+                                    "maximumError": "2mb"
                                 }
                             ]
                         },
@@ -228,25 +228,6 @@
                   },
                   "defaultConfiguration": "development"
                 },
-                "prerender": {
-                    "builder": "@angular-devkit/build-angular:prerender",
-                    "options": {
-                      "routes": [
-                        "/"
-                      ]
-                    },
-                    "configurations": {
-                      "production": {
-                        "browserTarget": "app:build:production",
-                        "serverTarget": "app:server:production"
-                      },
-                      "development": {
-                        "browserTarget": "app:build:development",
-                        "serverTarget": "app:server:development"
-                      }
-                    },
-                    "defaultConfiguration": "production"
-                  }
             }
         }
     }

@@ -1,7 +1,6 @@
 {
     "modules": {
         "core": {
-            "base": "SERVER_HOST/api",
             "userDetails": "/user-details"
         }
     }
