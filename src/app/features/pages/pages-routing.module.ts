@@ -4,7 +4,7 @@ import { HomepageComponent } from './components/landing-page/landing-page.compon
 import { ContactComponent } from './components/contact/contact.component';
 const routes: Routes = [
     { path: '', component: HomepageComponent },
-    { path: 'contact', component:ContactComponent },
+    { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({

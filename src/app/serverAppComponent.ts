@@ -3,8 +3,8 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppModule } from './app.module';
 
 @Component({
-  selector: 'app-bootstrap-application',
-  template: '<div #root></div>',
+  selector: 'app-root',
+  template: '',
   standalone: true,
 })
 export class ServerAppComponent {
