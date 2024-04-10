@@ -4,11 +4,11 @@
       "outDir": "../out-tsc/app",
       "types": []
     },
-    "angularCompilerOptions": {
-        "annotateForClosureCompiler": true,
-        "strictTemplates": true,
-        "strictInjectionParameters": true,
-    },
+    "files": [
+      "main.ts",
+      "../server.ts",
+      "main.server.ts"
+    ],
     "exclude": [
       "**/*.spec.ts",
       "app/shared/testing/router.mock.ts",

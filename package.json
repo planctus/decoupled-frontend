@@ -18,13 +18,35 @@
     "build-prod-stats": "eui-scripts build-app --configuration=production-optimized --configEnvTarget=prod --statsJson",
     "app:build": "eui-scripts build-app",
     "app:inject-config": "eui-scripts inject-config-app",
-    "generate-changelog": "eui-scripts generate-changelog"
+    "generate-changelog": "eui-scripts generate-changelog",
+    "serve:prerender": "http-server -c-1 dist/browser",
+    "dev:ssr": "ng run app:serve-ssr",
+    "serve:ssr": "node dist/server/server.mjs",
+    "postinstall": "patch-package"
   },
   "private": true,
   "dependencies": {
-    "@eui/deps-base": "17.2.2"
+    "@angular/forms": "^17.3.3",
+    "@angular/material": "^17.3.3",
+    "@angular/material-moment-adapter": "^17.3.3",
+    "@angular/platform-browser": "^17.3.3",
+    "@angular/platform-browser-dynamic": "^17.3.3",
+    "@angular/platform-server": "17.3.0",
+    "@angular/router": "^17.3.3",
+    "@angular/ssr": "^17.0.9",
+    "@egjs/hammerjs": "^2.0.17",
+    "@eui/deps-base": "17.2.2",
+    "@ngrx/effects": "^17.1.1",
+    "@ngx-translate/core": "^15.0.0",
+    "express": "^4.18.2",
+    "http-server": "^14.1.1",
+    "ngrx-store-freeze": "^0.2.4",
+    "ngx-device-detector": "^7.0.0",
+    "patch-package": "^8.0.0",
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
+    "@types/express": "^4.17.17",
     "husky": "9.0.11"
   },
   "resolutions": {

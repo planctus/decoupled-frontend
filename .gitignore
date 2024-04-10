@@ -8,6 +8,7 @@
 **/out-tsc
 **/tmp
 **/test/reports
+src/coverage
 
 # IDEs and editors
 /.idea
