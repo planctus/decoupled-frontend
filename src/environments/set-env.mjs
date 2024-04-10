@@ -1,15 +1,21 @@
 import { writeFile } from 'fs';
+import { fileURLToPath } from 'url';
 import { config } from 'dotenv';
+import { dirname, resolve } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const setEnv = async () => {
   // Load environment variables from .env file
-  config({ path: 'src/environments/.env' });
+  const envPath = resolve(__dirname, '../../.env');
+  config({ path: envPath });
 
   // Define environment configuration objects
   const envConfigFile = `export const environment = {
   production: false,
   enableDevToolRedux: true,
-  graphqlUri: 'https://digit-ewpp-ext-decoupled-backend.acc.fpfis.tech.ec.europa.eu/api/graphql',
+  graphqlUri: '${process.env.GRAPHQL_ENDPOINT}',
   basicAuthUsername: '${process.env.BASIC_AUTH_USERNAME}',
   basicAuthPassword: '${process.env.BASIC_AUTH_PASSWORD}',
   envDynamicConfig: {
