@@ -4,9 +4,17 @@ import { PagesService } from '@shared/services/pages.services';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CONFIG_TOKEN, EuiAppConfig } from '@eui/core';
+import { FeaturedItemComponent } from '../../../../shared/components/featured-item/featured-item.component';
+import { ParagraphOeBannerComponent } from '../../../../shared/components/paragraph-oe-banner/paragraph-oe-banner.component';
+import { ParagraphOeAccordionComponent } from '../../../../shared/components/paragraph-oe-accordion/paragraph-oe-accordion.component';
+import { BlockquoteComponent } from '../../../../shared/components/blockquote/blockquote.component';
+import { ParagraphOeRichTextComponent } from '../../../../shared/components/paragraph-oe-rich-text/paragraph-oe-rich-text.component';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  templateUrl: './landing-page.component.html'
+    templateUrl: './landing-page.component.html',
+    standalone: true,
+    imports: [NgIf, NgFor, ParagraphOeRichTextComponent, BlockquoteComponent, ParagraphOeAccordionComponent, ParagraphOeBannerComponent, FeaturedItemComponent]
 })
 export class LandingPageComponent implements OnDestroy {
   paragraphs: any;

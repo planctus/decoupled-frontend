@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { EclMenuItemSelectEvent } from '@eui/ecl';
+import { EclMenuItemSelectEvent, EclAppComponentModule, EclSiteHeaderComponentModule, ECLClickOutsideDirective, EclMenuComponentModule, EclPageHeaderComponentModule, EclBreadcrumbComponentModule, EclSiteFooterComponentModule, EclLinkDirectiveModule, EclIconComponentModule } from '@eui/ecl';
 import { NavigationService } from '@shared/services/navigation.services';
 import { Subscription } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { NgFor, NgIf } from '@angular/common';
 
 interface MenuItem {
     label: string;
@@ -12,6 +15,23 @@ interface MenuItem {
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    standalone: true,
+    imports: [
+        EclAppComponentModule,
+        EclSiteHeaderComponentModule,
+        ECLClickOutsideDirective,
+        EclMenuComponentModule,
+        NgFor,
+        RouterLink,
+        NgIf,
+        EclPageHeaderComponentModule,
+        EclBreadcrumbComponentModule,
+        RouterOutlet,
+        EclSiteFooterComponentModule,
+        EclLinkDirectiveModule,
+        EclIconComponentModule,
+        TranslateModule,
+    ],
 })
 export class AppComponent implements OnInit, OnDestroy {
     menuItems: MenuItem[] = [];

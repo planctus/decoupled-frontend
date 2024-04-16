@@ -17,14 +17,11 @@ const MODULES = [
     CommonModule,
 ];
 @NgModule({
-    imports: [...MODULES],
-    declarations: [
-        ParagraphOeAccordionComponent,
+    imports: [...MODULES, ParagraphOeAccordionComponent,
         ParagraphOeBannerComponent,
         ParagraphOeRichTextComponent,
         BlockquoteComponent,
-        FeaturedItemComponent
-    ],
+        FeaturedItemComponent],
     exports: [
         ...MODULES,
         ParagraphOeAccordionComponent,

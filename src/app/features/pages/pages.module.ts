@@ -8,9 +8,7 @@ import { SharedModule } from '@shared/shared.module';
     imports: [
         SharedModule,
         PagesRoutingModule,
-    ],
-    declarations: [
-        LandingPageComponent
+        LandingPageComponent,
     ],
 })
 export class PagesModule {
