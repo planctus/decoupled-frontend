@@ -124,6 +124,10 @@
                         "buildTarget": "app:build"
                     },
                     "configurations": {
+                        "proxy": {
+                            "buildTarget": "app:build:development",
+                            "proxyConfig": "proxy.conf.json"
+                        },
                         "proxy-mock": {
                             "buildTarget": "app:build:development",
                             "proxyConfig": "proxy-mock.conf.json"

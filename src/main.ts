@@ -11,8 +11,10 @@ import { provideAnimations } from "@angular/platform-browser/animations";
 import { BrowserModule, bootstrapApplication } from "@angular/platform-browser";
 import { InMemoryCache } from "@apollo/client/core";
 import { HttpLink } from "apollo-angular/http";
+import { HttpHeaders } from '@angular/common/http';
 import { APOLLO_OPTIONS, ApolloModule } from "apollo-angular";
 import { AppStarterService } from "./app/app-starter.service";
+import { CredentialsService } from "./app/shared/services/credential.service";
 
 if (environment.production) {
     enableProdMode();
@@ -23,6 +25,7 @@ preInitApp(environment).then(() =>
     providers: [
         importProvidersFrom(BrowserModule, CoreModule, AppRoutingModule, ApolloModule),
         AppStarterService,
+        CredentialsService,
         {
             provide: APP_INITIALIZER,
             useFactory: (appStarterService) => () => new Promise<void>((resolve) => {
@@ -33,16 +36,17 @@ preInitApp(environment).then(() =>
         },
         {
             provide: APOLLO_OPTIONS,
-            useFactory(httpLink: HttpLink) {
+            useFactory(httpLink: HttpLink, credentialsService: CredentialsService) {
                 return {
                     cache: new InMemoryCache(),
                     link: httpLink.create({
                         uri: environment.graphqlUri,
                         withCredentials: true,
+                        headers: new HttpHeaders().set('Authorization', credentialsService.getAuthorizationHeader()),
                     }),
                 };
             },
-            deps: [HttpLink],
+            deps: [HttpLink, CredentialsService],
         },
         provideAnimations(),
         provideHttpClient(withInterceptorsFromDi()),
