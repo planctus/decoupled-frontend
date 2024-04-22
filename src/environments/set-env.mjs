@@ -5,7 +5,7 @@ import { dirname, resolve } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+console.log(process.env);
 const setEnv = async () => {
   // Load environment variables from .env file
   const envPath = resolve(__dirname, '../../.env');
@@ -18,6 +18,7 @@ const setEnv = async () => {
   graphqlUri: '${process.env.GRAPHQL_ENDPOINT}',
   basicAuthUsername: '${process.env.BASIC_AUTH_USERNAME}',
   basicAuthPassword: '${process.env.BASIC_AUTH_PASSWORD}',
+  baseUrl: '${process.env.BASIC_URL_DEV}',
   envDynamicConfig: {
     uri: 'assets/env-json-config.json',
     deepMerge: true,
@@ -31,6 +32,7 @@ const setEnv = async () => {
   graphqlUri: 'https://digit-ewpp-ext-decoupled-backend.acc.fpfis.tech.ec.europa.eu/api/graphql',
   basicAuthUsername: '${process.env.BASIC_AUTH_USERNAME}',
   basicAuthPassword: '${process.env.BASIC_AUTH_PASSWORD}',
+  baseUrl: '${process.env.BASIC_URL_PROD}',
   envDynamicConfig: {
     uri: 'assets/env-json-config.json',
     deepMerge: true,
