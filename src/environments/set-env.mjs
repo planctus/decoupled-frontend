@@ -5,7 +5,7 @@ import { dirname, resolve } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
+console.log(process.env);
 const setEnv = async () => {
   // Load environment variables from .env file
   const envPath = resolve(__dirname, '../../.env');
