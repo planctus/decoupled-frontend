@@ -17,6 +17,7 @@ const indexHtmlPath = '../../dist/browser/index.html';
 const resolvedIndexPath = path.resolve(__dirname, indexHtmlPath);
 
 console.log('Resolved Index HTML Path:', resolvedIndexPath);
+console.log(environment);
 
 try {
     // Check if the file exists
