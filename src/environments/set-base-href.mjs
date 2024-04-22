@@ -23,11 +23,11 @@ try {
     if (fs.existsSync(resolvedIndexPath)) {
         let indexHtml = fs.readFileSync(resolvedIndexPath, 'utf-8');
 		const baseHref = environment.baseUrl ? environment.baseUrl : '/';
-        indexHtml = indexHtml.replace('<base href="/">', `<base href="${environment.baseUrl}">`);
+        indexHtml = indexHtml.replace('<base href="/">', `<base href="${baseHref}">`);
 
         fs.writeFileSync(resolvedIndexPath, indexHtml, 'utf-8');
 
-        console.log(`Base href set to: ${environment.baseUrl}`);
+        console.log(`Base href set to: ${baseHref}`);
     } else {
         console.error(`Error: File '${resolvedIndexPath}' does not exist.`);
     }
