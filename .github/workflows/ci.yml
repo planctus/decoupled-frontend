@@ -51,7 +51,7 @@ jobs:
         env:
           BASIC_AUTH_USERNAME: ${{ secrets.BASIC_AUTH_USERNAME }}
           BASIC_AUTH_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }}
-          BASE_URL: ${{ secrets.BASIC_URL_PROD }}
+          BASIC_URL_PROD: ${{ secrets.BASIC_URL_PROD }}
           GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
         run: yarn install --frozen-lockfile
       - name: Build app
