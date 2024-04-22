@@ -9,6 +9,15 @@
 **/tmp
 **/test/reports
 
+# env files
+.env
+src/environments/environment.ts
+src/environments/environment.prod.ts
+src/environments/environment.prod.mjs
+src/environments/environment.prod.js.map
+src/environments/environment.js.map
+src/environments/environment.mjs
+
 # IDEs and editors
 /.idea
 .project
@@ -28,7 +37,7 @@
 # misc
 /.sass-cache
 /connect.lock
-/coverage
+**/coverage
 /libpeerconnection.log
 npm-debug.log
 testem.log
