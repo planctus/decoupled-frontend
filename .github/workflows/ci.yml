@@ -50,6 +50,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build app
+        env:
+          BASIC_AUTH_USERNAME: ${{ secrets.BASIC_AUTH_USERNAME }}
+          BASIC_AUTH_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }}
+          BASE_URL: ${{ secrets.BASIC_URL_PROD }}
+          GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
         run: yarn build-prod
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.0
