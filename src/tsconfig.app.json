@@ -14,6 +14,6 @@
       "app/shared/testing/router.mock.ts",
       "environments/environment.prod.ts",
       "environments/environment.dev.ts",
-      "environments/set-env.ts",
+      "environments/set-env.mjs",
     ]
   }

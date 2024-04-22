@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "src/environments/",
+    "target": "ES2022",
+    "module": "ES2022",
+    "esModuleInterop": true,
+    "useDefineForClassFields": false,
+    "types": ["node"]
+  },
+  "include": ["src/environments/environment.ts", "src/environments/environment.prod.ts"],
+  "exclude": ["node_modules"]
+}
