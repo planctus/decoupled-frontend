@@ -32,7 +32,7 @@ const setEnv = async () => {
   graphqlUri: 'https://digit-ewpp-ext-decoupled-backend.acc.fpfis.tech.ec.europa.eu/api/graphql',
   basicAuthUsername: '${process.env.BASIC_AUTH_USERNAME}',
   basicAuthPassword: '${process.env.BASIC_AUTH_PASSWORD}',
-  baseUrl: '/assets',
+  baseUrl: '${process.env.BASIC_URL_PROD}',
   envDynamicConfig: {
     uri: 'assets/env-json-config.json',
     deepMerge: true,
