@@ -15,7 +15,7 @@ export class CredentialsService {
 
   getAuthorizationHeader(): string {
     const authString = `${this.basicAuthUsername}:${this.basicAuthPassword}`;
-    const base64AuthString = authString; // Encode credentials as Base64
+    const base64AuthString = btoa(authString); // Encode credentials as Base64
     return `Basic ${base64AuthString}`;
   }
 }
