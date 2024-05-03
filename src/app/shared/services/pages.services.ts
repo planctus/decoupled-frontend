@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { Observable } from 'rxjs';
-import { CONFIG_TOKEN, EuiAppConfig } from '@eui/core';
+import { I18nService } from '@eui/core';
+import { TranslateService } from '@ngx-translate/core'
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,12 @@ export class PagesService {
 
   constructor(
     private apollo: Apollo,
-    @Inject(CONFIG_TOKEN) private appConfig: EuiAppConfig,
-  ) { }
+    protected i18nService: I18nService,
+    private translateService: TranslateService,
+  ) {}
 
   getNodeData(path): Observable<any> {
-    const languageCode = this.appConfig.global.i18n?.i18nService?.defaultLanguage;
+    const languageCode = this.translateService.store.currentLang;
     return this.apollo.query<any>({
       query: gql`
       query {
