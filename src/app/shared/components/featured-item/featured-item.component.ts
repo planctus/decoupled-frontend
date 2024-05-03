@@ -1,10 +1,13 @@
 import { Component, Input } from '@angular/core';
+import { EclFeaturedModule, EclMediaContainerComponentModule } from '@eui/ecl';
 
 type alignmentType = 'left' | 'right';
 
 @Component({
-  selector: 'app-ecl-featured-item',
-  templateUrl: './featured-item.component.html'
+    selector: 'app-ecl-featured-item',
+    templateUrl: './featured-item.component.html',
+    standalone: true,
+    imports: [EclFeaturedModule, EclMediaContainerComponentModule]
 })
 export class FeaturedItemComponent {
   @Input() isExtended: boolean = false;

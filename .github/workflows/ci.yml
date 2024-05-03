@@ -49,6 +49,11 @@ jobs:
           node-version: 18.18.2
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        env:
+          BASIC_AUTH_USERNAME: ${{ secrets.BASIC_AUTH_USERNAME }}
+          BASIC_AUTH_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }}
+          BASIC_URL_PROD: ${{ secrets.BASIC_URL_PROD }}
+          GRAPHQL_ENDPOINT: ${{ secrets.GRAPHQL_ENDPOINT }}
       - name: Build app
         run: yarn build-prod
       - name: Deploy to Netlify

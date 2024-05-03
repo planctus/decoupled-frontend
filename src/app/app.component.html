@@ -5,31 +5,17 @@
         </ecl-site-header-action>
 
         <ecl-menu>
-            <ecl-menu-item label="Home"></ecl-menu-item>
-            <ecl-menu-item label="Item 1">
-                <ecl-menu-mega>
-                    <ecl-menu-mega-item label="Item 1.1"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 1.2"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 1.3" [isCurrent]="true"></ecl-menu-mega-item>
-                </ecl-menu-mega>
-
-            </ecl-menu-item>
-
-            <ecl-menu-item label="Item 2">
-                <ecl-menu-mega>
-                    <ecl-menu-mega-item label="Item 2.1"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 2.2"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 2.3"></ecl-menu-mega-item>
-                </ecl-menu-mega>
-            </ecl-menu-item>
-
-            <ecl-menu-item label="Item 3">
-                <ecl-menu-mega>
-                    <ecl-menu-mega-item label="Item 3.1"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 3.2"></ecl-menu-mega-item>
-                    <ecl-menu-mega-item label="Item 3.3"></ecl-menu-mega-item>
-                </ecl-menu-mega>
-            </ecl-menu-item>
+            <ng-container *ngFor="let menuItem of menuItems">
+                <ecl-menu-item [label]="menuItem.label" [routerLink]="[menuItem.path]">
+                    <ng-container *ngIf="menuItem.children && menuItem.children.length > 0">
+                        <ecl-menu-mega>
+                            <ng-container *ngFor="let childItem of menuItem.children">
+                                <ecl-menu-mega-item [label]="childItem.label" [routerLink]="[menuItem.path + '/' + childItem.path]"></ecl-menu-mega-item>
+                            </ng-container>
+                        </ecl-menu-mega>
+                    </ng-container>
+                </ecl-menu-item>
+            </ng-container>
         </ecl-menu>
     </ecl-site-header>
 
