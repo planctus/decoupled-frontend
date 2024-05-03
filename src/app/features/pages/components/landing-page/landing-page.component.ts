@@ -32,22 +32,24 @@ export class LandingPageComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    // Initialize nodeUrl
+    const languageCode = this.translateService.store.currentLang;
     this.nodeUrl = this.getLastPartOfUrl(this.router.url);
     if (!this.nodeUrl) {
-      const languageCode = this.translateService.store.currentLang;
       this.nodeUrl = 'index_' + languageCode;
+    } else {
+      this.nodeUrl = this.nodeUrl.slice(0, -2) + languageCode;
     }
 
-    // Subscribe to language change event
     this.languageChangeSubscription = this.i18nService.getState().subscribe((state: { activeLang: string }) => {
-      // Update nodeUrl on language change
-      this.nodeUrl = 'index_' + state.activeLang;
-      // Call getNodeData with updated nodeUrl
+      this.nodeUrl = this.getLastPartOfUrl(this.router.url);
+      if (!this.nodeUrl) {
+        this.nodeUrl = 'index_' + state.activeLang;
+      } else {
+        this.nodeUrl = this.nodeUrl.slice(0, -2) + state.activeLang;
+      }
       this.getNodeData(this.nodeUrl);
     });
 
-    // Initial call to getNodeData
     this.getNodeData(this.nodeUrl);
   }
 
@@ -61,7 +63,7 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     }
   }
 
-  getNodeData(nodeUrl: string): void {
+  private getNodeData(nodeUrl: string): void {
     // Unsubscribe from previous subscription if exists
     if (this.nodeDataSubscription) {
       this.nodeDataSubscription.unsubscribe();

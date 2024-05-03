@@ -16,7 +16,10 @@ export class PagesService {
   ) {}
 
   getNodeData(path): Observable<any> {
-    const languageCode = this.translateService.store.currentLang;
+    let languageCode = this.translateService.store.currentLang;
+    this.i18nService.getState().subscribe((state: { activeLang: string }) => {
+      languageCode = state.activeLang;
+    });
     return this.apollo.query<any>({
       query: gql`
       query {

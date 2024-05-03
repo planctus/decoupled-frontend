@@ -38,7 +38,6 @@ interface MenuItem {
 export class AppComponent implements OnInit, OnDestroy {
     menuItems: MenuItem[] = [];
     navigationSubscription: Subscription; // Subscription for navigationService.getHeaderMainNavigation()
-    languageChangeSubscription: Subscription; // Subscription for language change event
 
     constructor(
         private navigationService: NavigationService,
@@ -47,34 +46,41 @@ export class AppComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit() {
-        // Subscribe to language change event
-        this.languageChangeSubscription = this.i18nService.getState().subscribe((state:{activeLang:string})=>{
-            console.log(state);
-            this.updateMenuItems();
+        this.navigationSubscription = this.navigationService.getHeaderMainNavigation().subscribe(routes => {
+            const lang = this.translateService.store.currentLang;
+            this.menuItems = this.updateMenuItemsPaths(routes, lang);
         });
 
-        // Initial call to update menu items
-        this.updateMenuItems();
+        this.i18nService.getState().subscribe((state:{activeLang:string})=>{
+            const lang = state.activeLang;
+            this.menuItems = this.updateMenuItemsPaths(this.menuItems, lang);
+        });
     }
 
     ngOnDestroy(): void {
-        // Unsubscribe from the subscriptions when the component is destroyed
+        // Unsubscribe from the subscription when the component is destroyed
         if (this.navigationSubscription) {
             this.navigationSubscription.unsubscribe();
-        }
-        if (this.languageChangeSubscription) {
-            this.languageChangeSubscription.unsubscribe();
         }
     }
 
-    private updateMenuItems() {
-        // Unsubscribe from previous subscription if exists
-        if (this.navigationSubscription) {
-            this.navigationSubscription.unsubscribe();
-        }
-
-        this.navigationSubscription = this.navigationService.getHeaderMainNavigation().subscribe(routes => {
-            this.menuItems = routes;
+    private updateMenuItemsPaths(routes: MenuItem[], lang: string): MenuItem[] {
+        return routes.map(route => {
+            if (route.children && route.children.length) {
+                // If route has children, update their paths
+                const updatedChildren = this.updateMenuItemsPaths(route.children, lang);
+                return { 
+                    ...route,
+                    path: route.path.slice(0, -2) + lang,
+                    children: updatedChildren 
+                };
+            } else {
+                // If route does not have children, update its path
+                return {
+                    ...route,
+                    path: route.path.slice(0, -2) + lang // Replace last two characters with activeLang
+                };
+            }
         });
     }
 }
